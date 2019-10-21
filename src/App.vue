@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <InitForm  msg="Welcome to Your Vue.js App" titleApp="GameTime"/>
+    <CardTimes />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import InitForm  from './components/InitForm.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    InitForm
   }
 }
 </script>
 
-<style>
+<style >
+@font-face {
+    font-family: Grinched;
+    src: url("assets/GrinchedRegular.otf") format("opentype");
+}
+html, body, #app{
+  height:100%;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+ 
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-family: 'Grinched', Helvetica, Arial, sans-serif;
+  background-color: #e5e5e5;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+  align-items: center;
+  justify-content: center
 }
 </style>
