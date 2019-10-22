@@ -1,14 +1,20 @@
 <template>
-    <div class="card-times" @click="$emit('clickTimer')" >
+<div class="card-times">
+
+    <div  @click="$emit('clickTimer')" >
       <div class="player-number">Jugador # {{user}}</div>
       <div class="timer">{{seconds}}.<small>{{millisecond}}</small></div>
     </div>
+    <div class="back-button"  @click="$emit('clickBack')" >
+      <img src="../assets/icons8-down-left-48.png" alt="">
+    </div>
+</div>
 </template>
 <script>
 export default {
   name: 'TimerCard',
   props:['user','milliseconds'],
-  event:'clickTimer',
+  event:['clickTimer','clickBack'],
   data:function () {
     return {
       dt:null,
@@ -52,6 +58,11 @@ export default {
         this.millisecond = 0
           
         }
+    },
+    stop:function () {
+        clearInterval(this.control);
+          this.seconds = 0
+        this.millisecond = 0
     }
         
   }
@@ -72,5 +83,12 @@ export default {
 }
 .timer{
   font-size: 72px;
+}
+.back-button{
+  position: relative;
+  bottom: -65px;
+  left: -20px;
+  cursor: pointer;
+  align-self: flex-start;
 }
 </style>

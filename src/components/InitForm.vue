@@ -4,7 +4,7 @@
       <SelecNumberInput v-show="cardInit" label="Jugadores: " :value="users.length" v-on:add="addUser" v-on:remove="removeUser"/>
       <SelecNumberInput v-show="cardInit"  label="Segundos: " :value="seconds"  v-on:add="seconds++" v-on:remove="seconds--"/>
       <PlayButton v-show="cardInit"  v-on:clickBtn="clickBtn"/>
-      <TimerCard v-show="!cardInit"  ref="timer" :milliseconds="seconds*1000" :user="userIndex+1" v-on:clickTimer="nextUser" v-bind:style="{ 'background-color': color}"/>
+      <TimerCard v-show="!cardInit"  ref="timer" :milliseconds="seconds*1000" :user="userIndex+1" v-on:clickTimer="nextUser"  v-on:clickBack="RestartApp" v-bind:style="{ 'background-color': color}"/>
       <br>
   </div>
 </template>
@@ -30,7 +30,6 @@ export default {
     users:[],
     seconds:1,
     cardInit:true,
-    cronActive: false,
     userIndex:0,
     color:'#FFFFFF',
     colors:['#FF6633', '#FF33FF', '#FFFF99', '#00B3E6','#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D','#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC','#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC','#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399','#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933','#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF']
@@ -59,6 +58,11 @@ export default {
         this.userIndex = this.userIndex +1 == this.users.length?0 : this.userIndex +1
         this.color = this.users[this.userIndex].color
         this.$refs.timer.start();
+      },
+      RestartApp:function () {
+        this.$refs.timer.stop();
+        this.cardInit = true;
+        this.userIndex=0;
       }
   }
 }
