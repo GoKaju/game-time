@@ -1,7 +1,7 @@
 <template>
-<div class="card-times">
+<div class="card-times"  @click="$emit('clickTimer')">
 
-    <div  @click="$emit('clickTimer')" >
+    <div  >
       <div class="player-number">Jugador # {{user}}</div>
       <div class="timer">{{seconds}}.<small>{{millisecond}}</small></div>
     </div>
