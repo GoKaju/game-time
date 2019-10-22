@@ -55,8 +55,10 @@ export default {
         if (distance <= 0) {
           clearInterval(this.control);
           this.seconds = 0
-        this.millisecond = 0
+          this.millisecond = 0
           
+          var audio = new Audio('http://soundbible.com/mp3/Elevator Ding-SoundBible.com-685385892.mp3');
+          audio.play();
         }
     },
     stop:function () {
