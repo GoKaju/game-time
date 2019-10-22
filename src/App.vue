@@ -1,13 +1,11 @@
 <template>
   <div id="app">
     <InitForm  msg="Welcome to Your Vue.js App" titleApp="GameTimer"/>
-    <CardTimes />
   </div>
 </template>
 
 <script>
 import InitForm  from './components/InitForm.vue'
-
 export default {
   name: 'app',
   components: {
