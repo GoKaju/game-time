@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div>{{label}}</div>
-        <div class="arrow" @click="remove">
+        <div class="arrow" @mousedown="remove" @mouseup="clickMouseDown=false">
             <img src="../assets/icons8-chevron-left-48.png" alt="">
         </div>
         <div class="value">{{value}}</div>
-        <div class="arrow" @click="add">
+        <div class="arrow" @mousedown="add"  @mouseup="clickMouseDown=false">
             <img src="../assets/icons8-chevron-right-48.png" alt="">
         </div>
     </div>
@@ -19,6 +19,11 @@ export default {
     value: Number
   },
   event:['add','remove'],
+  data:function(){
+      return{
+          clickMouseDown: false
+      }
+  },
   methods:{
       add: function () {
           this.$emit('add')

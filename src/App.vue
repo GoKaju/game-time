@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <InitForm  msg="Welcome to Your Vue.js App" titleApp="GameTime"/>
+    <InitForm  msg="Welcome to Your Vue.js App" titleApp="GameTimer"/>
     <CardTimes />
   </div>
 </template>
@@ -29,6 +29,7 @@ html, body, #app{
  
 }
 #app {
+  touch-action: none;
   font-family: 'Grinched', Helvetica, Arial, sans-serif;
   background-color: #e5e5e5;
   color: #2c3e50;
