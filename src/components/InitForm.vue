@@ -5,7 +5,7 @@
       <SelecNumberInput v-show="cardInit"  label="Segundos: " :value="seconds"  v-on:add="seconds++" v-on:remove="seconds--"/>
       <PlayButton v-show="cardInit"  v-on:clickBtn="clickBtn"/>
       <TimerCard v-show="!cardInit"  ref="timer" :milliseconds="seconds*1000" :user="userIndex+1" v-on:clickTimer="nextUser" v-bind:style="{ 'background-color': color}"/>
-      {{color}}
+      <br>
   </div>
 </template>
 
