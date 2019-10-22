@@ -38,6 +38,7 @@ export default {
 
 <style scoped>
 .container{
+    touch-action: none;
     display: flex;
     flex-direction: row;
     font-size: 24px;
@@ -49,13 +50,16 @@ export default {
     padding: 3px;
 }
 .arrow> img{
+    touch-action: none;
   max-height: 24px;  
   cursor: pointer;
 }
 .arrow> img:hover{
+    touch-action: none;
   max-height: 28px;  
 }
 .value{
+    touch-action: none;
    font-size: 32px; 
    cursor: default;
 }

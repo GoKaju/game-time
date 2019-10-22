@@ -22,6 +22,7 @@ export default {
     src: url("assets/GrinchedRegular.otf") format("opentype");
 }
 html, body, #app{
+  touch-action: none;
   height:100%;
   margin:0;
   display: flex;
@@ -29,7 +30,7 @@ html, body, #app{
  
 }
 #app {
-  touch-action: none;
+  
   font-family: 'Grinched', Helvetica, Arial, sans-serif;
   background-color: #e5e5e5;
   color: #2c3e50;
