@@ -57,7 +57,7 @@ export default {
           this.seconds = 0
           this.millisecond = 0
           
-          var audio = new Audio('http://soundbible.com/mp3/Elevator Ding-SoundBible.com-685385892.mp3');
+          var audio = new Audio(require('../assets/superMarioBros-gameOver.mp3'));
           audio.play();
         }
     },
