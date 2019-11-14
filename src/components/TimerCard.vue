@@ -51,7 +51,7 @@ export default {
         this.millisecond = Math.floor((distance % (1000)));
           
 
-        // If the count down is over, write some text 
+        // If the count down is over
         if (distance <= 0) {
           clearInterval(this.control);
           this.seconds = 0
