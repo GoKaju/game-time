@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Grinched;
+  src: url('./GrinchedRegular.otf') format('opentype');
+}
+
+body {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: 'Grinched', Inter, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
+}
