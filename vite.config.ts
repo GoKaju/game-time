@@ -19,6 +19,7 @@ export default defineConfig({
         short_name: 'Game Time',
         description: 'Game Time is a simple game timer for board games',
         theme_color: '#ffffff',
+        orientation: 'landscape',
         icons: [
           {
             src: '/pwa-192x192.png',
