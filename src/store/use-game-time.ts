@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import useTimer from '../composables/use-timer'
 // import end.mp3
-const END_SOUND_EFFECT = '../assets/end.mp3'
+// const END_SOUND_EFFECT = '../assets/end.mp3'
+import END_SOUND_EFFECT from '../assets/end.mp3'
 
 const COLORS = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink']
 
@@ -11,12 +12,6 @@ export interface Player {
 }
 
 const timer = useTimer(30)
-
-const audio = new Audio()
-
-timer.onEndTime(() => {
-  audio.play()
-})
 
 export const useGameStore = defineStore('game-time', {
   state: () => ({
@@ -58,6 +53,12 @@ export const useGameStore = defineStore('game-time', {
       if (this.players.length === 0) return
       if (this.seconds <= 0) return
       // load audio
+
+      const audio = new Audio(END_SOUND_EFFECT)
+
+      timer.onEndTime(() => {
+        audio.play()
+      })
       audio.src = END_SOUND_EFFECT
 
       this.isPlaying = true
