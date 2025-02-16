@@ -4,7 +4,7 @@ import useTimer from '../composables/use-timer'
 // const END_SOUND_EFFECT = '../assets/end.mp3'
 import END_SOUND_EFFECT from '../assets/end.mp3'
 
-const COLORS = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink']
+const COLORS = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink','black']
 
 export interface Player {
   color: string
